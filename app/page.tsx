@@ -1,9 +1,15 @@
+"use client"
+
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
+import { useSkyfireAPIKey } from "@/lib/skyfire-sdk/context/context"
 import { buttonVariants } from "@/components/ui/button"
 
 export default function IndexPage() {
+  const { localAPIKey } = useSkyfireAPIKey()
+  if (!localAPIKey) return null
+
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
@@ -17,14 +23,6 @@ export default function IndexPage() {
         </p>
       </div>
       <div className="flex gap-4">
-        <Link
-          href={siteConfig.links.docs}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
-          Documentation
-        </Link>
         <Link
           target="_blank"
           rel="noreferrer"
