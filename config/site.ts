@@ -11,6 +11,6 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/skyfire-xyz/demo-getty-images",
+    github: "https://github.com/skyfire-xyz/demo-nextjs-template",
   },
 }
